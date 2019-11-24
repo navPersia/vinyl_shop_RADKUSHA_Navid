@@ -16,12 +16,4 @@
         </ul>
     @endforeach
 
-{{--                    <p>{{ $record->genre->name }}</p>--}}
-{{--                    <p>--}}
-{{--                        € {{ number_format($record->price,2) }}--}}
-{{--                        <span class="ml-3 badge badge-success">{{ $record->stock }}</span>--}}
-{{--                    </p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
 @endsection

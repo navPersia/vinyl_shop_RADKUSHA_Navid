@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @yield('css_after')
     <title>@yield('title', 'The Vinyl shop')</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="assets/icon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
 {{--  Navigation  --}}
@@ -18,6 +26,11 @@
 @include('shared.footer')
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('script_after')
+@if(env('APP_DEBUG'))
+    <script>
+        $('form').attr('novalidate', 'true');
+    </script>
+@endif
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--}}
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>--}}
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>--}}

@@ -1,13 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Welcome to the Vinyl Shop')
-
 @section('main')
-<h1>The vinyl shop</h1>
-<p>
-    welcome to my homepage the vinyl_shop
-</p>
-<p>
-    <em>Gemaakt door:</em> Navid Radkusha
-</p>
+    <h1>The Vinyl Shop</h1>
+    <p>Welcome to the website of The Vinyl Shop, a large online store with lots of (classic) vinyl records.</p>
 @endsection

@@ -85,7 +85,6 @@ class ShopController extends Controller
             });
         $records = Record::with('genre')
             ->get();
-//            ->orderBy('artist');
 
         $result = compact('genres', 'records');     // $result = ['genres' => $genres, 'records' => $records]
         return view('shop.shop_alt', $result);

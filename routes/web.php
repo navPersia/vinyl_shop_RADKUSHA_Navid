@@ -19,33 +19,22 @@
 ////  return 'Contact info';
 //    return view('contact');
 //});
+
+Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
+//Route::get('/home', 'HomeController@index')->name('home');
+
 Route::view('/','home');
-Route::view('contact-us', 'contact');
-//Route::get('admin/records', function (){
-//    $records = [
-//        'Queen - Greatest Hits',
-//        'The Rolling Stones - Sticky Fingers',
-//        'The Beatles - Abbey Road'
-//    ];
-//
-//    return view('admin.records.index', [
-//        'records' => $records
-//    ]);
-//});
-Route::prefix('admin')->group(function () {
-    Route::redirect('/', 'records');
+Route::get('contact-us', 'ContactUsController@show');
+Route::post('contact-us', 'ContactUsController@sendEmail');
+
+Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
+    route::redirect('/', 'records');
     Route::get('records', 'Admin\RecordController@index');
-//    Route::get('records', function (){
-//        $records = [
-//            'Queen - Greatest Hits',
-//            'The Rolling Stones - Sticky Fingers',
-//            'The Beatles - Abbey Road'
-//        ];
-//        return view('admin.records.index', [
-//            'records' => $records
-//        ]);
-//    });
+
 });
+
 Route::get('shop', 'ShopController@index');
 Route::get('shop/{id}', 'ShopController@show');
 Route::get('shop_alt', 'ShopController@shop_alt');
+
