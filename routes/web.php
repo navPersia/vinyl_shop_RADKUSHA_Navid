@@ -30,6 +30,7 @@ Route::post('contact-us', 'ContactUsController@sendEmail');
 
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     route::redirect('/', 'records');
+    Route::resource('genres', 'Admin\GenreController');
     Route::get('records', 'Admin\RecordController@index');
 
 });
@@ -38,3 +39,10 @@ Route::get('shop', 'ShopController@index');
 Route::get('shop/{id}', 'ShopController@show');
 Route::get('shop_alt', 'ShopController@shop_alt');
 
+Route::redirect('user', '/user/profile');
+Route::middleware(['auth'])->prefix('user')->group(function () {
+    Route::get('profile', 'User\ProfileController@edit');
+    Route::post('profile', 'User\ProfileController@update');
+    Route::get('password', 'User\PasswordController@edit');
+    Route::post('password', 'User\PasswordController@update');
+});
