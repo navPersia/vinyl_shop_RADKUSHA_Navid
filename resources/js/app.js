@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+window.Noty = require('noty');
 
 // window.Vue = require('vue');
 // Make all functions inside 'vinylShop.js' that start with 'export' accessible inside the HTML pages
