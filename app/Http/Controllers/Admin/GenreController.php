@@ -84,6 +84,7 @@ class GenreController extends Controller
      * @param  \App\Genre  $genre
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, Genre $genre)
     {
         $this->validate($request,[
