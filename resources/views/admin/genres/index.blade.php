@@ -172,7 +172,7 @@
                                    data-records="${value.records_count}"
                                    data-name="${value.name}">
                                     <div class="btn-group btn-group-sm">
-                                        <a href="#!" class="btn btn-outline-success btn-edit">
+                                        <a href="#!" class="btn btn-outline-success btn-edit" data-toggle="tooltip" title="Edit ${value.name}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#!" class="btn btn-outline-danger btn-delete" data-toggle="tooltip" data-placement="top" title="Delete ${value.name}">
